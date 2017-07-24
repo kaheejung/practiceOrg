@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value><!-- Page Version --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value><!-- Page Version --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value><!-- Page Version --></value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value><!-- Page Version --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value><!-- Page Version --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value><!-- Page Version --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Auto Save --></label>
+        <name>IsAutoSave__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout2 --></label>
+        <name>Layout2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout3 --></label>
+        <name>Layout3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout4 --></label>
+        <name>Layout4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout5 --></label>
+        <name>Layout5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout --></label>
+        <name>Layout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page --></label>
+        <name>Page__c</name>
+        <relationshipLabel><!-- Page Versions --></relationshipLabel>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Version Id --></nameFieldLabel>
+</CustomObjectTranslation>

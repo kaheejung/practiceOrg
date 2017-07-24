@@ -1,0 +1,26 @@
+<apex:page showHeader="true" sidebar="true" controller="XmlToJson">
+	<apex:form id="myForm">
+		<apex:inputTextarea rows="5" cols="40" value="{!strXML}"/><br/>
+		<apex:commandButton action="{!send}" value="Send" /><br/>
+
+		<p>Result</p>
+
+	<table>
+		<thead>
+			<tr>
+				<th>JSON</th><th>XML ChildElements</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<pre>{!parsedJSON}</pre>
+				</td>
+				<td>
+					<pre>{!arrXMLNode}</pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</apex:form>
+</apex:page>

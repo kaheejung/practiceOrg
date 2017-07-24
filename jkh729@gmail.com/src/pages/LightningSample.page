@@ -1,0 +1,284 @@
+<apex:page showHeader="true" sidebar="false" standardController="Case">
+	<apex:stylesheet value="{!URLFOR($Resource.LightningResource, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.LightningResource, 'assets/styles/salesforce-lightning-design-system.min.css')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.ckeditor, 'ckeditor/samples/sample.css')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.JQueryResource, 'jquery_1_12_4_min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.ckeditor, 'ckeditor/ckeditor.js')}"/>
+	<script src="/soap/ajax/33.0/connection.js" type="text/javascript"></script>
+	<script src="/soap/ajax/33.0/apex.js" type="text/javascript"></script>
+
+
+	<!-- Datepicker -->
+	<apex:includeScript value="{!URLFOR($Resource.LightningAppiphonyJS, '/appiphony-lightning-js-master/public/lib/src/jquery.aljs-datepicker.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.LightningAppiphonyJS, '/appiphony-lightning-js-master/public/lib/moment/moment.js')}"/>
+
+	<script>
+		$( document ).ready(function() {
+			CKEDITOR.replace('textarea_ckeditor',  {
+				// ToolBar Custom
+				toolbarGroups: [
+					{"name":"basicstyles","groups":["basicstyles"]},
+					{"name":"links","groups":["links"]},
+					{"name":"paragraph","groups":["list","blocks"]},
+					{"name":"document","groups":["mode"]},
+					{"name":"insert","groups":["insert"]},
+					{"name":"styles","groups":["styles"]},
+					{"name":"about","groups":["about"]}
+				]});
+			// edit mode Test
+			//var load_text = '<p><img src=\'/servlet/servlet.FileDownload?file=0157F000000kYI4QAM\' id=\'temp_img_0\' /></p>';
+			//CKEDITOR.instances.textarea_ckeditor.setData(load_text);
+			//alert('Theme : {! $User.UITheme }');
+			//$(top.document).find("#0666F0000075uvB").attr("height","500");
+		});
+
+		var onSave = function(){
+			console.log('start');
+
+			$('#div_target').html(CKEDITOR.instances.textarea_ckeditor.getData());
+
+			$( '#div_target > p > img' ).each(function( index ) {
+				$(this).attr('id', 'temp_img_' + index);
+				//console.log('RichTextEditor_Test.upload start');
+				var img_src = $(this).attr('src'), img_url;
+
+				
+				// Image File Upload
+				RichTextEditor_Test.upload(img_src, function(result, event){
+					if(event.status){
+						//img_url = protocal + '//' + host + '/servlet/servlet.FileDownload?file=' + result;
+						//console.log('result : ' + result);
+						img_url = '/servlet/servlet.FileDownload?file=' + result;
+						$('#temp_img_' + index).attr('src', img_url);
+						//console.log('result : ' + result);
+					}
+				});
+
+
+				// Case Comment Insert
+
+			});
+		};
+
+		function lookupTest(){
+			// j_id0:j_id7:j_id14:j_id15:j_id23:j_id26
+			// j_id:j_id7&lknm=j_id:j_id7%3Aj_id14%3Aj_id15%3Aj_id23%3Aj_id26
+
+			var baseURL = 'https://c.ap4.visual.force.com/_ui/common/data/LookupPage?lkfm=j_id0%3Aj_id7&lknm=lookupContact&lktp=001&lksrch=';
+			openPopup(baseURL, "lookup", 500, 480, "width=500,height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+		}
+
+		//Assigning SLDS Static Resource Path To A Variable To Use It With ALJS Initialization
+		//var assetsLoc = '{!URLFOR($Resource.LightningResource)}';
+  
+		//ALJS Initialization   
+		/*$.aljsInit({
+			assetsLocation: assetsLoc, //SLDS Static Resource Path
+			scoped: true
+		});*/
+
+		// SCRIPT
+		$(document).ready(function(){
+			// Search Icon Change
+			$('.custom_input').find('img').attr('src',"{!URLFOR($Resource.LightningResource, 'assets/icons/utility/search_60.png')}");
+			$('.custom_input').find('img').css('background-image', 'none');
+
+			$('.picklistArrowRight').attr('src', "{!URLFOR($Resource.LightningResource, 'assets/icons/utility/right_60.png')}");
+			$('.picklistArrowRight').css('background-image', 'none');
+			$('.picklistArrowLeft').attr('src', "{!URLFOR($Resource.LightningResource, 'assets/icons/utility/left_60.png')}");
+			$('.picklistArrowLeft').css('background-image', 'none');
+
+			/*$('#date').datepicker({
+				initDate: moment(), //Today Date
+				format: 'YYYY/MM/DD', //Date Format Of Datepicker Input Field
+				onChange: function(datepicker) {
+					$('#SelectedDate').html('Selected Date: <strong>'+moment(datepicker.selectedFullDate._d).format('YYYY/MM/DD')+'</strong>');
+				}
+			});*/
+		});
+	</script>
+
+	<style>
+		input.custom_input{
+			background-color: #fff;
+			border: 1px solid #d8dde6;
+			border-radius: .25rem;
+			width: 96%;
+			line-height: 1.875rem;
+			min-height: calc(1.875rem + (1px * 2));
+			padding: 0 1rem 0 .75rem;
+		}
+
+		.multiSelectPicklistTable tr.multiSelectPicklistRow td{
+			width: 50px !important;
+			padding-right: 0px !important;
+		}
+	</style>
+
+
+	<apex:form >
+		<apex:actionFunction action="{!save}" name="doSave" />
+		<div class="slds-scope">
+			<!-- <div class="slds-page-header">
+				<div class="slds-media">
+					<div class="slds-media__figure">
+						<span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+							<svg class="slds-icon" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+							</svg>
+						</span>
+					</div>
+					<div class="slds-media__body" style="display: table-cell; vertical-align: middle;">
+						<h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Case Edit">Case Edit</h1>
+					</div>
+				</div>
+			</div> -->
+			<h3 class="slds-section__title">
+				<button aria-controls="expando-unique-id" aria-expanded="true" class="slds-button slds-section__title-action">
+					<svg class="slds-section__title-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.LightningResource, '/assets/icons/utility-sprite/svg/symbols.svg#switch')}"></use>
+					</svg>
+					<span class="slds-truncate" title="Case Information">Case Edit</span>
+				</button>
+			</h3>
+
+			<div class="slds-form slds-form_compound">
+				<fieldset class="slds-form-element" style="margin-top: 15px; padding: 5px 25px 5px 25px;">
+					<legend class="slds-form-element__label slds-text-title_caps">Case Information</legend>
+					<div class="slds-form-element__group">
+						<div class="slds-form-element__row">
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="Status">Status</label>
+								<!-- <input type="text" id="input-01" class="slds-input"/> -->
+								<apex:inputField value="{!Case.Status}" id="Status" styleClass="slds-input"/>
+							</div>
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="ContactId">Contact</label>
+								<!-- <input type="text" id="input-02" class="slds-input"/> -->
+								<apex:inputField value="{!Case.ContactId}" id="ContactId" styleClass="custom_input"/>
+							</div>
+						</div>
+						<div class="slds-form-element__row">
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="AccountId">Account</label>
+								<!-- <input type="text" id="input-01" class="slds-input"/> -->
+								<apex:inputField value="{!Case.AccountId}" id="AccountId" styleclass="custom_input"/>
+							</div>
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="Priority">Priority</label>
+								<!-- <input type="text" id="input-02" class="slds-input"/> -->
+								<apex:inputField value="{!Case.Priority}" id="Priority" styleclass="slds-input"/>
+							</div>
+						</div>
+						<div class="slds-form-element__row">
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="Origin">Case Origin</label>
+								<!-- <input type="text" id="input-01" class="slds-input"/> -->
+								<apex:inputField value="{!Case.Origin}" id="Origin" styleclass="slds-input"/>
+							</div>
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="Type">Type</label>
+								<!-- <input type="text" id="input-02" class="slds-input"/> -->
+								<apex:inputField value="{!Case.Type}" id="Type" styleclass="slds-input"/>
+							</div>
+						</div>
+						<div class="slds-form-element__row">
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="Reason">Reason</label>
+								<!-- <input type="text" id="input-01" class="slds-input"/> -->
+								<apex:inputField value="{!Case.Reason}" id="Reason" styleclass="slds-input"/>
+							</div>
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="ClosedDate__c">ClosedDate</label>
+								<input type="text" id="input-02" class="slds-input"/>
+							</div>
+						</div>
+						<div class="slds-form-element__row">
+							<div class="slds-form-element slds-size_1-of-2">
+								<label class="slds-form-element__label" for="MultiSelectTest__c">Multi-Select</label>
+								<!-- <input type="text" id="input-01" class="slds-input"/> -->
+								<apex:inputField value="{!Case.MultiSelectTest__c}" id="MultiSelectTest__c" styleclass="slds-select"/>
+							</div>
+							<div class="slds-form-element slds-size_1-of-2">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="slds-form-element" style="margin-top: 15px; padding: 5px 25px 5px 25px;">
+					<legend class="slds-form-element__label slds-text-title_caps">Description Information</legend>
+					<div class="slds-form-element__group">
+						<div class="slds-form-element__row">
+							<div class="slds-form-element slds-size_1-of-2">
+								<!-- textarea Field -->
+								<label class="slds-form-element__label" for="input-id-02">Description</label>
+								<div class="slds-form-element__control">
+									<!-- <textarea id="input-id-02" class="slds-textarea" placeholder="Placeholder Text"></textarea> -->
+									<div style="width:100%; height: 100%;" id="commentDIV">
+										<textarea id="textarea_ckeditor" style="width: 100%; height: 70%;" class="ckeditor"></textarea>
+										<!-- <button id="btn_save" value="save" onclick="onSave()">Save</button> -->
+										<div id="div_target" style="width: 100%;" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="slds-button-group" role="group" style="padding-left: 47%;">
+				<!-- <apex:commandButton action="{!save}" value="Save" styleClass="slds-button slds-button_neutral"/>
+				<apex:commandButton value="Cancel" styleClass="slds-button slds-button_neutral"/> -->
+				<!-- <button class="slds-button slds-button_neutral">Refresh</button>
+				<button class="slds-button slds-button_neutral">Edit</button> -->
+				<button class="slds-button slds-button_neutral" onclick="doSave(); return false;">Save</button>
+			</div>
+		</div>
+
+		<!-- <apex:pageBlock title="Case Edit">
+			<apex:pageBlockSection columns="2" title="Case Information">
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel>Status</apex:outputLabel>
+					<apex:inputField value="{!Case.Status}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					Contact
+					<apex:inputField value="{!Case.ContactId}" />
+				</apex:pageBlockSectionItem>
+
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel>Account</apex:outputLabel>
+					<apex:inputField value="{!Case.AccountId}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					Priority
+					<apex:inputField value="{!Case.Priority}" />
+				</apex:pageBlockSectionItem>
+
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel>Case Origin</apex:outputLabel>
+					<apex:inputField value="{!Case.Origin}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					Type
+					<apex:inputField value="{!Case.Type}" />
+				</apex:pageBlockSectionItem>
+
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel>Reason</apex:outputLabel>
+					<apex:inputField value="{!Case.Reason}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1" title="Description Information">
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel>Description</apex:outputLabel>
+					<apex:outputPanel>
+						<div style="width:100%; height: 100%;" id="commentDIV">
+							<textarea id="textarea_ckeditor" style="width: 100%; height: 70%;" class="ckeditor"></textarea>
+							<button id="btn_save" value="save" onclick="onSave()">Save</button>
+							<div id="div_target" style="width: 100%;" />
+						</div>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock> -->
+	</apex:form>
+</apex:page>

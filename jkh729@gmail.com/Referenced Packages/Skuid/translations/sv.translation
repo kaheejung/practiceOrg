@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label><!-- AM PM Markers --></label>
+        <name>AM_PM_Markers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Action --></label>
+        <name>Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Actions --></label>
+        <name>Actions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add a New --></label>
+        <name>Add_A_New</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add All Visible Objects --></label>
+        <name>Add_All_Visible_Objects</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add Drilldown --></label>
+        <name>Add_Drilldown</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add New --></label>
+        <name>Add_New</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add This --></label>
+        <name>Add_This</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- After This --></label>
+        <name>After_This</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All Time --></label>
+        <name>All_Time</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All Values --></label>
+        <name>All_Values</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All_X --></label>
+        <name>All_X</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All records exported to CSV --></label>
+        <name>All_records_exported_to_CSV</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Allow external emails --></label>
+        <name>Allow_external_emails</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Any_X --></label>
+        <name>Any_X</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Apply --></label>
+        <name>Apply</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Applying Filter --></label>
+        <name>Applying_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Assign using active assignment rule --></label>
+        <name>Assign_using_active_assignment_rule</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Batches Processed --></label>
+        <name>Batches_Processed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Before This --></label>
+        <name>Before_This</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Boolean - Off --></label>
+        <name>Boolean_Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Boolean - On --></label>
+        <name>Boolean_On</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Building Page --></label>
+        <name>Building_Page</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cannot Find Object Question --></label>
+        <name>Cannot_Find_Object_Question</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check All --></label>
+        <name>Check_All</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Click Here to Return to Where You Started --></label>
+        <name>Click_Here_to_Return_to_Where_You_Started</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Click To Go To {0} Tab --></label>
+        <name>Click_To_Go_To_Object_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clone --></label>
+        <name>Clone</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Column --></label>
+        <name>Column</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Components --></label>
+        <name>Components</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Confirm Delete --></label>
+        <name>Confirm_Delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Created By --></label>
+        <name>Created_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Custom Action --></label>
+        <name>Custom_Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Source --></label>
+        <name>DataSource</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Date Completed --></label>
+        <name>Date_Completed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Date Submitted --></label>
+        <name>Date_Submitted</name>
+    </customLabels>
+    <customLabels>
+        <label>Stäng</label>
+        <name>Datepicker_CloseText</name>
+    </customLabels>
+    <customLabels>
+        <label>Idag</label>
+        <name>Datepicker_CurrentText</name>
+    </customLabels>
+    <customLabels>
+        <label>Nästa</label>
+        <name>Datepicker_NextText</name>
+    </customLabels>
+    <customLabels>
+        <label>Förra</label>
+        <name>Datepicker_PrevText</name>
+    </customLabels>
+    <customLabels>
+        <label>Ve</label>
+        <name>Datepicker_WeekHeader</name>
+    </customLabels>
+    <customLabels>
+        <label>Söndag,Måndag,Tisdag,Onsdag,Torsdag,Fredag,Lördag</label>
+        <name>Day_Names_Long</name>
+    </customLabels>
+    <customLabels>
+        <label>Sö,Må,Ti,On,To,Fr,Lö</label>
+        <name>Day_Names_Min</name>
+    </customLabels>
+    <customLabels>
+        <label>Sön,Mån,Tis,Ons,Tor,Fre,Lör</label>
+        <name>Day_Names_Short</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Day Scheduling View --></label>
+        <name>Day_Scheduling_View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete --></label>
+        <name>Delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting --></label>
+        <name>Deleting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Done --></label>
+        <name>Done</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Download Sample File --></label>
+        <name>Download_Sample_File</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_All_Columns_Must_Be_Mapped_Before_Import --></label>
+        <name>ERROR_All_Columns_Must_Be_Mapped_Before_Import</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_At_Least_One_Import_Job_Required --></label>
+        <name>ERROR_At_Least_One_Import_Job_Required</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Content_Type_Not_Supported --></label>
+        <name>ERROR_Content_Type_Not_Supported</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Could_Not_Find_Skuid_Page --></label>
+        <name>ERROR_Could_Not_Find_Skuid_Page</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Could_Not_Process_Page_Include_Merge --></label>
+        <name>ERROR_Could_Not_Process_Page_Include_Merge</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Could_Not_Retrieve_File_From_URL --></label>
+        <name>ERROR_Could_Not_Retrieve_File_From_URL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_DML_Operation_On_Model_X_Failed_Due_To_Error --></label>
+        <name>ERROR_DML_Operation_On_Model_X_Failed_Due_To_Error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR Duplicate Value for Unique Field --></label>
+        <name>ERROR_Duplicate_Value_for_Unique_Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Empty_Column_Header_Found --></label>
+        <name>ERROR_Empty_Column_Header_Found</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Empty_File --></label>
+        <name>ERROR_Empty_File</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_File_Contains_Invalid_Characters --></label>
+        <name>ERROR_File_Contains_Invalid_Characters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_File_Has_No_Columns --></label>
+        <name>ERROR_File_Has_No_Columns</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_File_Only_Has_Header_Row --></label>
+        <name>ERROR_File_Only_Has_Header_Row</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Import_Process_Required --></label>
+        <name>ERROR_Import_Process_Required</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Insufficient_Privileges_To_Create_Field --></label>
+        <name>ERROR_Insufficient_Privileges_To_Create_Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Insufficient_Privileges_To_Delete_Record --></label>
+        <name>ERROR_Insufficient_Privileges_To_Delete_Record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Insufficient_Privileges_To_Insert_Record --></label>
+        <name>ERROR_Insufficient_Privileges_To_Insert_Record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Insufficient_Privileges_To_Update_Field --></label>
+        <name>ERROR_Insufficient_Privileges_To_Update_Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Insufficient_Privileges_To_Update_Record --></label>
+        <name>ERROR_Insufficient_Privileges_To_Update_Record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Invalid_Batch_Job_Id --></label>
+        <name>ERROR_Invalid_Batch_Job_Id</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Invalid_Field_Mappings_Still_Exist --></label>
+        <name>ERROR_Invalid_Field_Mappings_Still_Exist</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Invalid_SObjectType_For_Model --></label>
+        <name>ERROR_Invalid_SObjectType_For_Model</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Invalid_SObject_No_Metadata_Retrieved --></label>
+        <name>ERROR_Invalid_SObject_No_Metadata_Retrieved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Invalid_SObject_Type --></label>
+        <name>ERROR_Invalid_SObject_Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Missing Field on Field from Another Model Condition --></label>
+        <name>ERROR_Missing_Field_on_Field_from_Another_Model_Condition</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_No_Fields_Selected_For_Model_Query --></label>
+        <name>ERROR_No_Fields_Selected_For_Model_Query</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_No_Permission_To_Author_Arbitrary_JavaScript --></label>
+        <name>ERROR_No_Permission_To_Author_Arbitrary_JavaScript</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page Name Conflict --></label>
+        <name>ERROR_Page_Name_Conflict</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page Version Conflict --></label>
+        <name>ERROR_Page_Version_Conflict</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Page_Name_or_Id_Required --></label>
+        <name>ERROR_Page_or_Tab_Required</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Page_with_Id_Could_Not_Be_Retrieved --></label>
+        <name>ERROR_Page_with_Id_Could_Not_Be_Retrieved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Protected_Module --></label>
+        <name>ERROR_Protected_Module</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Unable_To_Redirect_To_Standard_Pages --></label>
+        <name>ERROR_Unable_To_Redirect_To_Standard_Pages</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ERROR_Valid_DataTable_Required --></label>
+        <name>ERROR_Valid_DataTable_Required</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Page --></label>
+        <name>Edit_Page</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Row --></label>
+        <name>Edit_Row</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Rows Action --></label>
+        <name>Edit_Rows_Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- End Date --></label>
+        <name>End_Date</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Enter keywords --></label>
+        <name>Enter_keywords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error --></label>
+        <name>Error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error Could Not Find Upload Method --></label>
+        <name>Error_Could_Not_Find_Upload_Method</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error Invalid File Upload Data Source --></label>
+        <name>Error_Invalid_File_Upload_Data_Source</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error Performing Requested Search --></label>
+        <name>Error_Performing_Requested_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error_While_Loading_Visualforce_Page_Include --></label>
+        <name>Error_While_Loading_Visualforce_Page_Include</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Example_Of_What_File_Should_Look_Like --></label>
+        <name>Example_Of_What_File_Should_Look_Like</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Expand/Collapse --></label>
+        <name>Expand_Collapse</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Export Data --></label>
+        <name>Export_Data</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field --></label>
+        <name>Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field_X_Does_Not_Exist_On_Object --></label>
+        <name>Field_X_Does_Not_Exist_On_Object</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Fields --></label>
+        <name>Fields</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- File Column Header --></label>
+        <name>File_Column_Header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- File Resource --></label>
+        <name>File_Resource</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Filter --></label>
+        <name>Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Filter could not be applied --></label>
+        <name>Filter_could_not_be_applied</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- First --></label>
+        <name>First</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Flag For Deletion --></label>
+        <name>Flag_For_Deletion</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Flag for Delete Action --></label>
+        <name>Flag_for_Delete_Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Greather Than --></label>
+        <name>Greater_Than</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Home --></label>
+        <name>Home</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- How to Format Your File --></label>
+        <name>How_to_Format_Your_File</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Import --></label>
+        <name>Import</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ImportWizardStep1ReturnWarning --></label>
+        <name>ImportWizardStep1ReturnWarning</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ImportWizard_OnceFinishedWithEditsSelectSaveAs --></label>
+        <name>ImportWizard_OnceFinishedWithEditsSelectSaveAs</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Import Complete --></label>
+        <name>Import_Complete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Import Email On The Way --></label>
+        <name>Import_Email_On_The_Way</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Import In Progress --></label>
+        <name>Import_In_Progress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Import Processing In Background --></label>
+        <name>Import_Processing_In_Background</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error Invalid Data Source --></label>
+        <name>Invalid_Data_Source</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error Invalid Data Source Type --></label>
+        <name>Invalid_Data_Source_Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid Field On Object Requested by Model --></label>
+        <name>Invalid_Field_On_Object_Requested_by_Model</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid Field on Object Requested by Model Condition --></label>
+        <name>Invalid_Field_on_Object_Requested_by_Model_Condition</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Invalid Number Format --></label>
+        <name>Invalid_Number_Format</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- {0} item selected --></label>
+        <name>Item_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- {0} items selected --></label>
+        <name>Items_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Job Details --></label>
+        <name>Job_Details</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Last --></label>
+        <name>Last</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Last Modified By --></label>
+        <name>Last_Modified_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Less Than --></label>
+        <name>Less_Than</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- List View --></label>
+        <name>List_View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Load More --></label>
+        <name>Load_More</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading --></label>
+        <name>Loading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading Calendar Events --></label>
+        <name>Loading_Calendar_Events</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Map Column Headers To Fields --></label>
+        <name>Map_Column_Headers_To_Fields</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mapping Status --></label>
+        <name>Mapping_Status</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mass Update Selected Rows --></label>
+        <name>Mass_Update_Selected_Rows</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Model_Id_Not_Provided --></label>
+        <name>Model_Id_Not_Provided</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Models --></label>
+        <name>Models</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Module --></label>
+        <name>Module</name>
+    </customLabels>
+    <customLabels>
+        <label>Januari,Februari,Mars,April,Maj,Juni,Juli,Augusti,September,Oktober,November,December</label>
+        <name>Month_Names_Long</name>
+    </customLabels>
+    <customLabels>
+        <label>Jan,Feb,Mar,Apr,Maj,Jun,Jul,Aug,Sep,Okt,Nov,Dec</label>
+        <name>Month_Names_Short</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Month View --></label>
+        <name>Month_View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Credentials --></label>
+        <name>MyCredentials</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Event --></label>
+        <name>New_Event</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Next --></label>
+        <name>Next</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No --></label>
+        <name>No</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No but I would like to Delete --></label>
+        <name>No_But_I_Would_Like_To_Delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No Dont Delete Anything --></label>
+        <name>No_Dont_Delete_Anything</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No Module --></label>
+        <name>No_Module</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No Objects to Display --></label>
+        <name>No_Objects_to_Display</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No Page Name Provided For Visualforce Page Include --></label>
+        <name>No_Page_Name_Provided_For_Visualforce_Page_Include</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- None_Option_Text --></label>
+        <name>None_Option_Text</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- None Selected --></label>
+        <name>None_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Number Selected --></label>
+        <name>Number_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Number of Items Successfully Created --></label>
+        <name>Number_of_Items_Successfully_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Number of Items That Failed --></label>
+        <name>Number_of_Items_That_Failed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Object_X_Does_Not_Exist --></label>
+        <name>Object_X_Does_Not_Exist</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Objects Per Page --></label>
+        <name>Objects_Per_Page</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Organization Default --></label>
+        <name>Organization_Default</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Owner --></label>
+        <name>Owner</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page_Error_Header --></label>
+        <name>Page_Error_Header</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Page Regions --></label>
+        <name>Page_Regions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pagination Limit Reached --></label>
+        <name>Pagination_Limit_Reached</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Password --></label>
+        <name>Password</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Picture View --></label>
+        <name>Picture_View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please_Check_Requested_Model_Merge_Field --></label>
+        <name>Please_Check_Requested_Model_Merge_Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please Check Requested URL Parameter --></label>
+        <name>Please_Check_Requested_URL_Parameter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Preview --></label>
+        <name>Preview</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Previous --></label>
+        <name>Previous</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Profile Object Label --></label>
+        <name>Profile_Object_Label</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Properties --></label>
+        <name>Properties</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Records Successfully Created --></label>
+        <name>Records_Successfully_Created</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Records_Successfully_Created_Or_Updated --></label>
+        <name>Records_Successfully_Created_Or_Updated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Records That Failed --></label>
+        <name>Records_That_Failed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove --></label>
+        <name>Remove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove this Column --></label>
+        <name>Remove_this_Column</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Required Fields have no Value --></label>
+        <name>Required_Fields_have_no_Value</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Resources --></label>
+        <name>Resources</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Result --></label>
+        <name>Result</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Results --></label>
+        <name>Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Retrieving data for export --></label>
+        <name>Retrieving_data_for_export</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Retrieving records a to b --></label>
+        <name>Retrieving_records_a_to_b</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Row Selected --></label>
+        <name>Row_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Rows Selected --></label>
+        <name>Rows_Selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save --></label>
+        <name>Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saved --></label>
+        <name>Saved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving --></label>
+        <name>Saving</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search --></label>
+        <name>Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Searching --></label>
+        <name>Searching</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select --></label>
+        <name>Select</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select A File --></label>
+        <name>Select_A_File</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Cards --></label>
+        <name>Select_Cards</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Event Type to Create --></label>
+        <name>Select_Event_Type_to_Create</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Option None --></label>
+        <name>Select_Option_None</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send notification email --></label>
+        <name>Send_notification_email</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Send notification email to --></label>
+        <name>Send_notification_email_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Share --></label>
+        <name>Share</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show --></label>
+        <name>Show</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Showing Rows --></label>
+        <name>Showing_Rows</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Skuid Batch Processing --></label>
+        <name>Skoodat_Batch_Processing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Skuid Page Problems --></label>
+        <name>Skuid_Page_Problems</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Specific Record Type --></label>
+        <name>Specific_Record_Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Start Date --></label>
+        <name>Start_Date</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Status of Import Operation --></label>
+        <name>Status_of_Import_Operation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Submitted By --></label>
+        <name>Submitted_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Table Settings --></label>
+        <name>Table_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- To_See_Imported_Records --></label>
+        <name>To_See_Imported_Records</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Edit Mode on Selected Rows --></label>
+        <name>Toggle_Edit_Mode_on_Selected_Rows</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Flag Selected Rows for Deletion --></label>
+        <name>Toggle_Selected_Rows_for_Deletion</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Items Requested For Import --></label>
+        <name>Total_Items_Requested_For_Import</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Uncheck All --></label>
+        <name>Uncheck_All</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unsaved Changes Warning --></label>
+        <name>Unsaved_Changes_Warning</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unsupported_Page_Include_Merge_Type --></label>
+        <name>Unsupported_Page_Include_Merge_Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Upload --></label>
+        <name>Upload</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Upload Successful --></label>
+        <name>Upload_Successful</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Uploading --></label>
+        <name>Uploading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Username --></label>
+        <name>Username</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validate Mappings --></label>
+        <name>Validate_Mappings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Validate Mappings Tooltip --></label>
+        <name>Validate_Mappings_Tooltip</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View --></label>
+        <name>View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View More --></label>
+        <name>View_More</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Visible --></label>
+        <name>Visible</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Week View --></label>
+        <name>Week_View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Welcome Email HTML Body --></label>
+        <name>Welcome_Email_HTML_Body</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Welcome Email HTML Body Part 2 --></label>
+        <name>Welcome_Email_HTML_Body_Part_2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Welcome Email Plain Text Body --></label>
+        <name>Welcome_Email_Plain_Text_Body</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Welcome to Skuid --></label>
+        <name>Welcome_To_Skuid</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Wizard_Step_Title --></label>
+        <name>Wizard_Step_Title</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Yes --></label>
+        <name>Yes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Applying sort order change --></label>
+        <name>applying_sort_order_change</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No component renderer --></label>
+        <name>pb_No_component_renderer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No properties renderer --></label>
+        <name>pb_No_properties_renderer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Summary Function (AVG) --></label>
+        <name>summary_avg</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Summary Function (MAX) --></label>
+        <name>summary_max</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Summary Function (MED) --></label>
+        <name>summary_med</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Summary Function (MIN) --></label>
+        <name>summary_min</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Summary Function (SUM) --></label>
+        <name>summary_sum</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- Credentials --></label>
+        <name>Credentials</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Skuid Central --></label>
+        <name>SkuidCentral</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Themes --></label>
+        <name>SkuidThemes</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Skuid Settings --></label>
+        <name>Skuid_Settings</name>
+    </customTabs>
+</Translations>

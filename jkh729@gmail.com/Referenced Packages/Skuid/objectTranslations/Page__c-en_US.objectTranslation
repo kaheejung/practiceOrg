@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Page</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pages</value>
+    </caseValues>
+    <fields>
+        <label><!-- Composer Settings --></label>
+        <name>Composer_Settings__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Auto-Saved Versions --></label>
+        <name>Count_Auto_Saved_Versions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Master --></label>
+        <name>IsMaster__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date Check --></label>
+        <name>Last_Modified_Date_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout2 --></label>
+        <name>Layout2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout3 --></label>
+        <name>Layout3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout4 --></label>
+        <name>Layout4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout5 --></label>
+        <name>Layout5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layout --></label>
+        <name>Layout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Page --></label>
+        <name>MasterPage__c</name>
+        <relationshipLabel><!-- Child Pages --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The maximum number of automatically-saved Page Versions Skuid will create for this Page before it will start deleting the oldest Auto-Saves. --></help>
+        <label><!-- Max Auto-Saves --></label>
+        <name>Max_Auto_Saves__c</name>
+    </fields>
+    <fields>
+        <help><!-- Which module is this Page included in? --></help>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+        <picklistValues>
+            <masterLabel>Skuid</masterLabel>
+            <translation><!-- Skuid --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Desktop</masterLabel>
+            <translation><!-- Desktop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UniqueId --></label>
+        <name>UniqueId__c</name>
+    </fields>
+    <layouts>
+        <layout>Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Page Name</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Max Auto-Saves must be greater than or equal to 0. --></errorMessage>
+        <name>Max_Auto_Saves_At_Least_0</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Page&apos;s name cannot be blank, and cannot contain spaces, &amp;, ?, quotes, or other characters not permitted in URLs. --></errorMessage>
+        <name>Page_Name_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

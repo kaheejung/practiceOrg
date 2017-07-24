@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value><!-- Component Pack --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value><!-- Component Pack --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value><!-- Component Pack --></value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value><!-- Component Pack --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value><!-- Component Pack --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value><!-- Component Pack --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Builder Definition File --></label>
+        <name>Builder_Definition_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cache Package Definition --></label>
+        <name>Cache_Package_Definition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Load Order --></label>
+        <name>Load_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache01 --></label>
+        <name>Package_Cache01__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache02 --></label>
+        <name>Package_Cache02__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache03 --></label>
+        <name>Package_Cache03__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache04 --></label>
+        <name>Package_Cache04__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache05 --></label>
+        <name>Package_Cache05__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache06 --></label>
+        <name>Package_Cache06__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache07 --></label>
+        <name>Package_Cache07__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache08 --></label>
+        <name>Package_Cache08__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache09 --></label>
+        <name>Package_Cache09__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache10 --></label>
+        <name>Package_Cache10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache11 --></label>
+        <name>Package_Cache11__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache12 --></label>
+        <name>Package_Cache12__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache13 --></label>
+        <name>Package_Cache13__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache14 --></label>
+        <name>Package_Cache14__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache15 --></label>
+        <name>Package_Cache15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache16 --></label>
+        <name>Package_Cache16__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache17 --></label>
+        <name>Package_Cache17__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache18 --></label>
+        <name>Package_Cache18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache19 --></label>
+        <name>Package_Cache19__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache20 --></label>
+        <name>Package_Cache20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache21 --></label>
+        <name>Package_Cache21__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache22 --></label>
+        <name>Package_Cache22__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache23 --></label>
+        <name>Package_Cache23__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache24 --></label>
+        <name>Package_Cache24__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Cache25 --></label>
+        <name>Package_Cache25__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource Name --></label>
+        <name>Resource_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource Namespace --></label>
+        <name>Resource_Namespace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Runtime Definition File --></label>
+        <name>Runtime_Definition_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+</CustomObjectTranslation>

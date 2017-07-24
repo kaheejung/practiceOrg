@@ -1,0 +1,185 @@
+<apex:page showHeader="true" sidebar="true" extensions="RichTextEditor_Test" standardController="Case" standardStylesheets="true" showChat="true">
+	<apex:includeScript value="{!URLFOR($Resource.JQueryResource, 'jquery_1_12_4_min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.ckeditor, 'ckeditor/ckeditor.js')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.ckeditor, 'ckeditor/samples/sample.css')}"/>
+	
+	<!-- inline visualpage의 높이를 동적으로 조정 -->
+	<!-- <apex:includeScript value="{!URLFOR($Resource.rawgit_porthole, 'porthole.min.js')}"/>  -->
+	<script>
+// 		__case = {Id: "{!Case.Id}"};
+//         var caseId = __case.Id.length === 18? __case.Id.substring(0,15): __oppty.Id;
+//         __ProviderXDM = new Porthole.WindowProxy('https://ap4.salesforce.com/' + caseId);
+//         __ProviderXDM.addEventListener( function(messageEvent) {
+//             if (messageEvent) {
+//                 var msg = messageEvent.data;
+//                 switch (msg.verb) {
+//                     case "test":
+//                         alert("XDM Test message recv'd by Provider");
+//                         break;
+//                     case "refresh":
+//                         location.reload();
+//                         break;
+//                 }
+//             }
+//         });
+//         function sendRefresh() {
+//             __ProviderXDM.post({verb:"refresh"});
+//         }
+//         function sendEdit() {
+//             __ProviderXDM.post({verb:"edit"});
+//         }
+// 		function sendFrameSize() {
+//             var field = document.getElementsByClassName("heightField")[0];
+//             //if no height is provided in the textfield, send a random height to show effect
+//            var height = field.value === ""? (100 + Math.floor(Math.random()*100)) : field.value;
+//             var msg = {
+//                 verb: "resize",
+//                 payload: {
+//                     iframe:'XDMPage',
+//                     size: {
+//                         height: height
+//                     }
+//                 }
+//             };
+//             __ProviderXDM.post(msg);
+//         }
+//         document.getElementsByClassName("heightField")[0].value = 100;
+//         console.log( "Child Location:" );
+//         console.log( location.href );
+  //       (function() {
+ 
+		//         //define a map of SF pod instance names to the organization Id pod byte (orgid[3])
+		//         window.__podMap={0:"NA0",3:"na1",5:"na3",6:"na4",7:"na5",8:"na6",A:"na7",C:"na8",E:"na9",F:"na10",G:"na11",U:"na12",d:"na14",1:"ap0",9:"ap1",2:"eu0",D:"eu1",b:"eu2",T:"cs0",S:"cs1",R:"cs2",Q:"cs3",P:"cs4",O:"cs5",N:"cs6",M:"cs7",L:"cs8",K:"cs9",J:"cs10",Z:"cs11",V:"cs12",W:"cs13",c:"cs14",e:"cs15",f:"cs16",g:"cs17",t:"na1"};
+		 
+		//         //set the id of the ApexPage XDMPage
+		//         window.__vfPageId = "06650000000DdFS";
+		 
+		//         //get the URL of the VF page as embedded in the iframe
+		//         var hostParts = location.hostname.split(/\./);
+		//         if (hostParts.length === 3) {
+		//             //2nd parm is the id of the OpptyProducts VF page in the org
+		//             //window.__vfFrameURL = "https://c."+ hostParts[0]+".visual.force.com/servlet/servlet.Integration?lid="+__vfPageId+"&ic=1";
+		//             window.__vfFrameURL = "https://c.ap4.visual.force.com/servlet/servlet.Integration?lid="+__vfPageId+"&ic=1";
+		//         } else if (hostParts.length === 4 && hostParts[1] === "my") {
+		//             var userInfo = sforce.connection.getUserInfo();
+		//             var pod = userInfo.organizationId[3];
+		//             if (typeof __podMap[pod] === "string") {
+		//                 //window.__vfFrameURL = "https://c."+__podMap[pod]+".visual.force.com/servlet/servlet.Integration?lid="+__vfPageId+"&ic=1";
+		//                 window.__vfFrameURL = "https://c.ap4.visual.force.com/servlet/servlet.Integration?lid="+__vfPageId+"&ic=1";
+		//             }
+		//         }
+		 
+		//         if (typeof window.__vfFrameURL === "string" && typeof window.__vfPageId === "string" ) {
+		 
+		//             //set up the parent side of the message pipeline, including event listener and message handler
+		//             __ConsumerXDM = new Porthole.WindowProxy(window.__vfFrameURL, window.__vfPageId);
+		//             __ConsumerXDM.addEventListener(function (message) {
+		//                 if (message) {
+		//                     var msg = message.data;
+		//                     switch (msg.verb) {
+		//                         case "test":
+		//                             console.warn("XDM Test message recv'd");
+		//                             break;
+		//                         case "refresh":
+		//                             location.reload();
+		//                             break;
+		//                         case "edit":
+		//                             location.href = location.href + "/e?retURL=%2F" + location.pathname;
+		//                             break;
+		//                         case "resize":
+		//                             if (msg.payload && msg.payload.size && msg.payload.iframe) {
+		//                                 if (typeof Ext === "object") {
+		//                                     var nodes = Ext.query("iframe[title='" + msg.payload.iframe + "']");
+		//                                     if (!Ext.isEmpty(nodes)) {
+		//                                         var i = Ext.fly(nodes[0].id);
+		//                                         i.setHeight(msg.payload.size.height * 1);
+		//                                     }
+		//                                 }
+		//                             }
+		//                             break;
+		//                     }
+		//                 }
+		 
+		//             });
+		//         }
+		// })();
+
+		$( document ).ready(function() {
+			CKEDITOR.replace('textarea_ckeditor',  {
+				// ToolBar Custom
+				toolbarGroups: [
+					{"name":"basicstyles","groups":["basicstyles"]},
+					{"name":"links","groups":["links"]},
+					{"name":"paragraph","groups":["list","blocks"]},
+					{"name":"document","groups":["mode"]},
+					{"name":"insert","groups":["insert"]},
+					{"name":"styles","groups":["styles"]},
+					{"name":"about","groups":["about"]}
+				]});
+			// edit mode Test
+			//var load_text = '<p><img src=\'/servlet/servlet.FileDownload?file=0157F000000kYI4QAM\' id=\'temp_img_0\' /></p>';
+			//CKEDITOR.instances.textarea_ckeditor.setData(load_text);
+			//alert('Theme : {! $User.UITheme }');
+			//$(top.document).find("#0666F0000075uvB").attr("height","500");
+		});
+
+		// new easyXDM.Socket({
+		//     remote: "http://provider.easyxdm.net/example/resized_iframe.html",
+		//     container: document.getElementById("container"),
+		//     onMessage: function(message, origin){
+		//         this.container.getElementsByTagName("iframe")[0].style.height = message + "px";
+		//     }
+		// });
+
+		// var socket = new easyXDM.Socket({
+		// 	onReady:  function(){
+		// 	    socket.postMessage(document.body.scrollHeight)
+		// 	}
+		// });
+
+
+		var onSave = function(){
+			console.log('start');
+
+			$('#div_target').html(CKEDITOR.instances.textarea_ckeditor.getData());
+
+			$( '#div_target > p > img' ).each(function( index ) {
+				$(this).attr('id', 'temp_img_' + index);
+				//console.log('RichTextEditor_Test.upload start');
+				var img_src = $(this).attr('src'), img_url;
+
+				
+				// Image File Upload
+				RichTextEditor_Test.upload(img_src, function(result, event){
+					if(event.status){
+						//img_url = protocal + '//' + host + '/servlet/servlet.FileDownload?file=' + result;
+						//console.log('result : ' + result);
+						img_url = '/servlet/servlet.FileDownload?file=' + result;
+						$('#temp_img_' + index).attr('src', img_url);
+						//console.log('result : ' + result);
+					}
+				});
+
+
+				// Case Comment Insert
+
+			});
+
+			//RichTextEditor_Test.doSave($('#div_target').val(), )
+
+		};
+
+		setTimeout(reloadAndClose, 5000);
+		function reloadAndClose() {
+			var iframe = document.getElementById('iframe');
+			var urlbase = 'https://ap4.salesforce.com';
+			iframe.src = urlbase + '{!URLFOR($Resource.OpenerReload)}';
+		}
+	</script>
+	<iframe src="about:blank"  id="iframe" style="display: none;" ></iframe>
+	<div style="width:100%; height: 100%;" id="commentDIV">
+		<textarea id="textarea_ckeditor" style="width: 100%; height: 70%;" class="ckeditor"></textarea>
+		<button id="btn_save" value="save" onclick="onSave()">Save</button>
+		<div id="div_target" style="width: 100%;" />
+	</div>
+</apex:page>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value><!-- Auth Provider --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value><!-- Auth Provider --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value><!-- Auth Provider --></value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value><!-- Auth Provider --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value><!-- Auth Provider --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value><!-- Auth Provider --></value>
+    </caseValues>
+    <fields>
+        <help><!-- The Apex Class which will provide authentication - must implement the &quot;ModelDataSourceAuthProvider&quot; interface. --></help>
+        <label><!-- Apex Class Name --></label>
+        <name>Apex_Class_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API Name of a Certificate to use to sign SAML Bearer Assertions made to this Auth Provider. The Certificate should be generated / uploaded from the &quot;Certificate and Key Management&quot; page in Salesforce Setup. --></help>
+        <label><!-- Assertion Signing Certificate --></label>
+        <name>Assertion_Signing_Certificate__c</name>
+    </fields>
+    <fields>
+        <help><!-- What method of authentication does this Auth Provider use? --></help>
+        <label><!-- Authentication Method --></label>
+        <name>Auth_Method__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authorize Endpoint URL --></label>
+        <name>Authorize_Endpoint_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API Name of a Client Certificate to pass with every request made to this Data Source to identify the client to the server. The Certificate should be generated / uploaded from the &quot;Certificate and Key Management&quot; page in Salesforce Setup --></help>
+        <label><!-- Client Certificate --></label>
+        <name>Client_Certificate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Id --></label>
+        <name>Client_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Secret --></label>
+        <name>Client_Secret__c</name>
+    </fields>
+    <fields>
+        <help><!-- Authentication callback URL for OAuth Data Sources --></help>
+        <label><!-- Custom Callback URL --></label>
+        <name>Custom_Callback_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Scopes --></label>
+        <name>Default_Scopes__c</name>
+    </fields>
+    <fields>
+        <label><!-- OAuth Grant Type --></label>
+        <name>OAuth_Grant_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Headers --></label>
+        <name>Request_Headers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Token Endpoint URL --></label>
+        <name>Token_Endpoint_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Body parameters to be sent along with the access token request, in addition to the standard OAuth 2.0 parameters. For instance, Microsoft ACS requires a &quot;resource&quot; parameter. --></help>
+        <label><!-- Token Request Body Parameters --></label>
+        <name>Token_Request_Body_Parameters__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provider Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Info Endpoint URL --></label>
+        <name>User_Info_Endpoint_URL__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+</CustomObjectTranslation>

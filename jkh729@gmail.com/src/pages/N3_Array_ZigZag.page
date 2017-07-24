@@ -1,0 +1,25 @@
+<apex:page showHeader="false" sidebar="false" controller="N3_Array_ZigZag">
+	<apex:form id="N3_ArrayForm">
+		<apex:actionFunction action="{!doDrawArray}" name="doDrawArray" status="blockUI"/>
+
+		<span style="font-weight: bold;">Array Size : </span><apex:inputText value="{!inputX}" />&nbsp;
+		<apex:commandButton value="OK" onclick="doDrawArray(); return false;"/>
+		<apex:pageBlock title="Example">
+			<apex:image value="{!URLFOR($Resource.Example_Images, 'Array.png')}"/>
+			<br/><span style="font-size: x-small;">(Array size : 3)</span>
+		</apex:pageBlock>
+		<apex:outputPanel rendered="{!listResults<>null}">
+			<apex:pageBlock title="Result">
+				<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-style: solid;border-color: silver;background: #fff;">
+				<apex:repeat value="{!listResults}" var="list">
+					<tr>
+						<apex:repeat value="{!list}" var="num">
+							<td width="30" height="30" valign="center" align="center">{!num}</td>
+						</apex:repeat>
+					</tr>
+				</apex:repeat>
+				</table>
+			</apex:pageBlock>
+		</apex:outputPanel>
+	</apex:form>
+</apex:page>

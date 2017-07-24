@@ -1,0 +1,9 @@
+<apex:page showHeader="true" sidebar="true">
+	<apex:includeScript value="/support/console/26.0/integration.js"/>
+	<script>
+		var logoutEventHandler = function(){
+			top.location = '/secur/logout.jsp';
+		}
+		sforce.console.addEventListener('customShortcut.Logout', logoutEventHandler);
+	</script>
+</apex:page>

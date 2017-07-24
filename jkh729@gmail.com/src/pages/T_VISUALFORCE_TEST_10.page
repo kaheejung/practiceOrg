@@ -1,0 +1,109 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" standardController="Case" extensions="T_CustomCaseComment">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/2000/xlink" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Salesforce Lightning Design System Trailhead Module</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- <apex:slds /> -->
+	<apex:includeScript value="{!URLFOR($Resource.JQueryResource, 'jquery_1_12_4_min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.ckeditor, 'ckeditor/ckeditor.js')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.ckeditor, 'ckeditor/samples/sample.css')}"/>
+
+	<style>
+	</style>
+
+	<script>
+		// Document On Ready
+		$( document ).ready(function() {
+			Visualforce.remoting.Manager.invokeAction (
+				'{!$RemoteAction.T_CustomCaseComment.getCustomCaseComment}'
+				, '{!Case.Id}'
+				, function(result, event) {
+					if (event.status) {
+						console.log(result);
+
+						var tag = '', img_tag;
+
+						for(var i = 0, result_length = result.length ; i < result_length ; i++){
+							tag += '<tr class="dataRow even first" onblur="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onmouseover="if (window.hiOn){hiOn(this);}">';
+							// Test 1st Column
+							tag += '	<td class="actionColumn">';
+							tag += '		<a href="/00a7F000000sQZs/e?parent_id=5007F000001eyeB&amp;retURL=%2F5007F000001eyeB" class="actionLink" title="Edit - Record 1 - ">Edit</a>';
+							tag += '		&nbsp;|&nbsp;';
+							tag += '		<a href="/setup/own/deleteredirect.jsp?delID=00a7F000000sQZs&amp;retURL=%2F5007F000001eyeB&amp;_CONFIRMATIONTOKEN=VmpFPSxNakF4Tnkwd05pMHlObFF3TnpveU1qb3hNeTR4TWpSYSxaVE8yMjY1Umk3STM1QW9DUE1pVjZPLE1XSXlaamM1" class="actionLink" onclick="return confirmDelete();" title="Delete - Record 1 - ">Del</a>';
+							tag += '	</td>';
+
+							tag += '	<td id="row_' + i + '" class="dataCell">';
+
+							// Body Script 처리
+							img_tag = result[i].CommentBody__c;
+							img_tag = img_tag.replace(/quot;/g, '\"').replace(/lt;/g, '<').replace(/gt;/g, '>').replace(/&/g, '');
+
+							tag += '		' + img_tag;
+							tag += '	</td>';
+
+							$('#comment_body').append(tag);
+							tag = '';
+						}
+
+					}
+				}
+			);
+
+		});
+	</script>
+
+	<body>
+		<!-- CSS Copy -->
+		<div class="bRelatedList">
+			<div class="noStandardTab">
+				<div class="bPageBlock brandSecondaryBrd secondaryPalette">
+					<!-- Header Start -->
+					<div class="pbHeader">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="pbTitle">
+										<img src="/img/s.gif" alt="" width="1" height="1" class="minWidth" title="" />
+										<img src="/img/s.gif" alt="" class="relatedListIcon" title="" />
+										<h3 id="5007F000001eyeB_RelatedEntityHistoryList_title">
+											Case Comment
+										</h3>
+									</td>
+									<td class="pbButton">&nbsp;</td>
+									<td class="pbHelp">&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- Header End -->
+					<!-- Body Start -->
+					<div class="pbBody" id="5007F000001eyeB_RelatedEntityHistoryList_body">
+						<table id="comment_body" class="list" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="headerRow">
+									<th scope="col" class=" zen-deemphasize">Action</th>
+									<th scope="col" class=" zen-deemphasize">Comment</th>
+								</tr>
+
+								<!-- ListRow -->
+
+
+							</tbody>
+						</table>
+					</div>
+					<!-- Body End -->
+					<!-- Footer Start -->
+					<div class="pbFooter secondaryPalette"><div class="bg"></div></div>
+					<!-- Footer End -->
+				</div>
+			</div>
+		</div>
+
+	</body>
+</head>
+</html>
+</apex:page>

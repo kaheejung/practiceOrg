@@ -1,0 +1,219 @@
+<apex:page showHeader="false" sidebar="false" controller="N2_Wrapper">
+	<apex:form id="N2_WrapperForm">
+		<apex:actionFunction name="doSave" action="{!doSave}" reRender="N2_WrapperForm"/>
+
+		<apex:pageBlock title="Rank Insert">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="저장" onclick="doSave();return false;"/>
+				<!-- <apex:commandButton value="보기"/> -->
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="2">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Rank1"/>
+					<apex:inputField value="{!DevelopReviewEdit.Rank1__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Rank2"/>
+					<apex:inputField value="{!DevelopReviewEdit.Rank2__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Rank3"/>
+					<apex:inputField value="{!DevelopReviewEdit.Rank3__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem />
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Amount"/>
+					<apex:inputField value="{!DevelopReviewEdit.Amount__c}"/>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Probability"/>
+					<apex:inputField value="{!DevelopReviewEdit.Probability__c}"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+		<apex:pageBlock title="Result">
+			<!-- <apex:pageBlockSection title="Result" columns="1"> -->
+				<table border="0" cellpadding="0" cellspacing="0" class="list" style="border-collapse: collapse;">
+					<thead>
+						<tr class="headerRow">
+							<th class="headerRow">Rank1</th>
+							<th class="headerRow">Rank2</th>
+							<th class="headerRow">Rank3</th>
+							<th class="headerRow">Amount</th>
+							<th class="headerRow">Probability</th>
+							<th class="headerRow">Average</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr class="dataRow">
+							<td class="dataCell" rowspan="2">
+								a
+							</td>
+							<td class="dataCell">
+								a
+							</td>
+							<td class="dataCell">
+								a
+							</td>
+							<td class="dataCell">
+								10000
+							</td>
+						</tr>
+						<tr class="dataRow">
+							<td class="dataCell">
+								a
+							</td>
+							<td class="dataCell">
+								b
+							</td>
+							<td class="dataCell">
+								2222
+							</td>
+						</tr> -->
+						<apex:repeat value="{!mapWrapperRank}" var="key">
+							<tr class="dataRow">
+								<td class="dataCell" rowspan="{!mapWrapperRank[key].rowspanSize + 1}" style="background: #ced9dd;text-align: center;">
+									{!mapWrapperRank[key].rank}
+								</td>
+								<td class="dataCell" style="background: #bbc5c9;text-align: center;">
+									{!mapWrapperRank[key].wrapperRankFirst.rank2}
+								</td>
+								<td class="dataCell" style="text-align: center;background: #a8b1b5;">
+									{!mapWrapperRank[key].wrapperRankFirst.rank3}
+								</td>
+								<td class="dataCell" style="text-align: right;">
+									<apex:outputText value="{0,number,#,###}">
+										<apex:param value="{!mapWrapperRank[key].wrapperRankFirst.amount}"/>
+									</apex:outputText>
+								</td>
+								<td class="dataCell" style="text-align: right;">
+									<apex:outputText value="{0,number,#,###%}">
+										<apex:param value="{!mapWrapperRank[key].wrapperRankFirst.probability}"/>
+									</apex:outputText>
+								</td>
+								<td class="dataCell" style="text-align: right;">
+									<apex:outputText value="{0,number,#,###}">
+										<apex:param value="{!mapWrapperRank[key].wrapperRankFirst.average}"/>
+									</apex:outputText>
+								</td>
+							</tr>
+							<!-- <tr class="dataRow">
+								<td class="dataCell">
+									a
+								</td>
+								<td class="dataCell">
+									b
+								</td>
+								<td class="dataCell">
+									2222
+								</td>
+							</tr> -->
+							<apex:repeat value="{!mapWrapperRank[key].mapSubWrapperRank}" var="subKey">
+								<tr class="dataRow">
+									<td class="dataCell" rowspan="{!mapWrapperRank[key].mapSubWrapperRank[subKey].rowspanSize + 1}" style="background: #bbc5c9;text-align: center;">
+										{!mapWrapperRank[key].mapSubWrapperRank[subKey].rank}
+									</td>
+									<td class="dataCell" style="text-align: center;background: #a8b1b5;">
+										{!mapWrapperRank[key].mapSubWrapperRank[subKey].wrapperRankFirst.rank3}
+									</td>
+									<td class="dataCell" style="text-align: right;">
+										<apex:outputText value="{0,number,#,###}">
+											<apex:param value="{!mapWrapperRank[key].mapSubWrapperRank[subKey].wrapperRankFirst.amount}"/>
+										</apex:outputText>
+									</td>
+									<td class="dataCell" style="text-align: right;">
+										<apex:outputText value="{0,number,#,###%}">
+											<apex:param value="{!mapWrapperRank[key].mapSubWrapperRank[subKey].wrapperRankFirst.probability}"/>
+										</apex:outputText>
+									</td>
+									<td class="dataCell" style="text-align: right;">
+										<apex:outputText value="{0,number,#,###}">
+											<apex:param value="{!mapWrapperRank[key].mapSubWrapperRank[subKey].wrapperRankFirst.average}"/>
+										</apex:outputText>
+									</td>
+								</tr>
+								<apex:repeat value="{!mapWrapperRank[key].mapSubWrapperRank[subKey].listWrapperRanks}" var="row">
+									<tr>
+										<!-- <apex:outputText rendered="{!mapWrapperRank[key].mapSubWrapperRank[subKey].wrapperRankFirst.rank2<>row.rank}"> -->
+											<td class="dataCell" style="text-align: center;background: #a8b1b5;">
+												{!row.rank}
+											</td>
+										<!-- </apex:outputText> -->
+										<td class="dataCell" style="text-align: right;">
+											<apex:outputText value="{0,number,#,###}">
+												<apex:param value="{!row.amount}"/>
+											</apex:outputText>
+										</td>	
+										<td class="dataCell" style="text-align: right;">
+											<apex:outputText value="{0,number,#,###%}">
+												<apex:param value="{!row.probability}"/>
+											</apex:outputText>
+										</td>	
+										<td class="dataCell" style="text-align: right;">
+											<apex:outputText value="{0,number,#,###}">
+												<apex:param value="{!row.average}"/>
+											</apex:outputText>
+										</td>	
+									</tr>
+								</apex:repeat>
+								<tr class="totalRow">
+									<td class="totalRow" style="text-align: center;">
+										SUM {!mapWrapperRank[key].mapSubWrapperRank[subKey].rank}
+									</td>
+									<td class="totalRow" style="text-align: right;">
+										<apex:outputText value="{0,number,#,###}">
+											<apex:param value="{!mapWrapperRank[key].mapSubWrapperRank[subKey].totalAmount}"/>
+										</apex:outputText>
+									</td>
+									<td class="totalRow" style="text-align: right;">
+									</td>
+									<td class="totalRow" style="text-align: right;">
+										<apex:outputText value="{0,number,#,###}">
+											<apex:param value="{!mapWrapperRank[key].mapSubWrapperRank[subKey].totalAverage}"/>
+										</apex:outputText>
+									</td>
+								</tr>
+							</apex:repeat>
+							<tr class="totalRow">
+								<td class="totalRow" colspan="2" style="text-align: center;background: #cecec4;">
+									Total {!mapWrapperRank[key].rank}
+								</td>
+								<td class="totalRow" style="text-align: right;background: #cecec4;">
+									<apex:outputText value="{0,number,#,###}">
+										<apex:param value="{!mapWrapperRank[key].totalAmount}"/>
+									</apex:outputText>
+								</td>
+								<td class="totalRow" style="text-align: right;background: #cecec4;">
+								</td>
+								<td class="totalRow" style="text-align: right;background: #cecec4;">
+									<apex:outputText value="{0,number,#,###}">
+										<apex:param value="{!mapWrapperRank[key].totalAverage}"/>
+									</apex:outputText>
+								</td>
+							</tr>
+						</apex:repeat>
+					</tbody>
+					<tfoot>
+						<tr class="totalRow">
+							<td class="totalRow" colspan="3" style="text-align: center;background: #cecec4;">
+								Total
+							</td>
+							<td class="totalRow" style="text-align: right;background: #cecec4;">
+								<apex:outputText value="{0,number,#,###}">
+									<apex:param value="{!mapTotalAmount['totalAmount']}"/>
+								</apex:outputText>
+							</td>
+							<td class="totalRow" style="text-align: right;background: #cecec4;">
+							</td>
+							<td class="totalRow" style="text-align: right;background: #cecec4;">
+								<apex:outputText value="{0,number,#,###}">
+									<apex:param value="{!mapTotalAmount['totalAverage']}"/>
+								</apex:outputText>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			<!-- </apex:pageBlockSection> -->
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

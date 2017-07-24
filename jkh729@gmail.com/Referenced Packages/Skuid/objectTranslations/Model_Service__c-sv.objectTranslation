@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value><!-- Data Source --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value><!-- Data Source --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value><!-- Data Source --></value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value><!-- Data Source --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value><!-- Data Source --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value><!-- Data Source --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Permission Name --></label>
+        <name>Access_Permission_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Access --></label>
+        <name>Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adapter Name --></label>
+        <name>Adapter_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auth Provider --></label>
+        <name>Auth_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auth Request Body Content Type --></label>
+        <name>Auth_Request_Body_Content_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auth Request Body --></label>
+        <name>Auth_Request_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auth Request Headers --></label>
+        <name>Auth_Request_Headers__c</name>
+    </fields>
+    <fields>
+        <help><!-- The HTTP verb to use for making authentication requests to this service. Defaults to POST. --></help>
+        <label><!-- Auth Request Verb --></label>
+        <name>Auth_Request_Verb__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authentication URL --></label>
+        <name>Authentication_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Authentication --></label>
+        <name>Authentication__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API Name of a Client Certificate to pass with every request made to this Data Source to identify the client to the server. The Certificate should be generated / uploaded from the &quot;Certificate and Key Management&quot; page in Salesforce Setup --></help>
+        <label><!-- Client Certificate --></label>
+        <name>Client_Certificate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credential Source --></label>
+        <name>Credential_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Configuration --></label>
+        <name>Custom_Config__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User field, or combination of fields, which contains the Subject Name Identifier to send in the SAML Assertion. --></help>
+        <label><!-- Name Identifier Field --></label>
+        <name>Name_Identifier_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User field, or combination of fields, which contains the Subject Name Identifier to send in the SAML Assertion, e.g. &apos;LOWER({{$User.FirstName}}) &amp;&amp; &quot;@skuid.com&quot;.&apos; --></help>
+        <label><!-- Name Identifier Formula --></label>
+        <name>Name_Identifier_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Body Parameters --></label>
+        <name>Request_Body_Parameters__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Headers --></label>
+        <name>Request_Headers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Scopes --></label>
+        <name>Request_Scopes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request URL Parameters --></label>
+        <name>Request_URL_Parameters__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Apex Proxy --></label>
+        <name>Use_Apex_Proxy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>Username__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+</CustomObjectTranslation>

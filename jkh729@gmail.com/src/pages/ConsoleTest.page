@@ -1,0 +1,150 @@
+<apex:page showHeader="true" sidebar="true" standardController="Case" extensions="ConsoleTest" >
+	<apex:includeScript value="/support/console/35.0/integration.js"/>
+	<apex:form id="myForm">
+		<script type="text/javascript">
+			// 최초 Load 시에 Object ID 파싱
+			sforce.console.getFocusedPrimaryTabObjectId(function (result) {
+				//alert('onFocusedSubtab. The subtab Id is : ' + result.id);
+				document.getElementById('{!$Component.result}').value = result.id;
+			});
+
+			// SubTab focus
+			sforce.console.onFocusedSubtab(function (result) {
+				//alert('onFocusedSubtab. The subtab Id is : ' + result.id + ' and the object Id is:' + result.objectId);
+				document.getElementById('{!$Component.result}').value = result.id;
+			});
+
+			sforce.console.getEnclosingPrimaryTabObjectId(function (result){
+				document.getElementById('{!$Component.objectResult}').value = result.id;
+			});
+
+		</script>
+		<!-- Tab Id : <apex:inputText id="result"/><br/>
+		Object Id : <apex:inputText id="objectResult"/> -->
+
+		<apex:repeat value="{!CaseCommentList}" var="obj">
+			<p><span style="color: indigo;">{!obj.CreatedBy.Name} ></span> {!obj.CommentBody}</p>
+		</apex:repeat>
+
+	</apex:form>
+	<!-- <apex:includeScript value="/support/console/39.0/integration.js"/>
+	<a href="#" onclick="testFocusPrimaryTabByUd();return false;">Click here to go an open primary tab by Id</a>
+	<script type="text/javascript">
+		function testFocusPrimaryTabById(){
+			var primaryTabId = 'scc-pt-0';
+			sforce.console.focusPrimaryTabById(primaryTabId, focusSuccess);
+		}
+
+		var focusSuccess = function focusSuccess(result){
+			if(result.success == true){
+				alert('Going to the primary tab was successful');
+			}else{
+				alert('Going to the primary tab was not successful');
+			}
+		}
+		
+	</script> -->
+	<!-- <html>	
+		<head>
+			<title>Disable close Tab on Load</title>
+			<script type="text/javascript">
+				function displayResultsCallback(result){
+					var resDiv = document.getElementById("eventResults");
+					resDiv.innerHTML = JSON.stringify(result);
+				}
+
+				function testDisableTabCloseTrueWithoutId(){
+					sforce.console.displayTabClose(true, false, displayResultsCallback);
+				}
+
+				function testDisableTabCloseFalseWithoutId(){
+					sforce.console.disableTabClose(false, false, displayResultsCallback);
+				}
+
+				function testDisableTabCloseTrueWithId(){
+					var tabId = window.prompt("Enter the tab ID", "scc-pt-0");
+					sforce.console.disableTabClose(true, tabId, displayResultsCallback);
+				}
+
+				function testDisableTabCloseFalseWithId(){
+					var tabId = window.prompt("Enter the tab ID", "scc-pt-0");
+					sforce.console.disableTabClose(false, tabId, displayResultsCallback);
+				}
+			</script>
+		</head>
+
+		<body>
+			<h1>Disable Tab Close Examples</h1>
+			<br/><br/>
+
+			<h2>API Callback Result</h2>
+			<br/>
+
+			<code><div id="eventResults"/></code>
+			<br/>
+
+			<h2>With No Tab ID</h2>
+			<p>The tab ID will be auto-detected by context, or the event will fail.</p>
+			<ul>
+				<li><a href="#" onclick="testDisableTabCloseTrueWithoutId();return false;">Disable closing for the enclosing tab</a></li>
+				<li><a href="#" onclick="testDisableTabCloseFalseWithoutId();return false;">Re-enable closing for the enclosing tab</a></li>
+			</ul>
+
+			<h2>With Tab ID Provided</h2>
+			<p>When the event context doesn't have a detectable tab ID, you can supply it yourself.</p>
+			<ul>
+				<li><a href="#" onclick="testDisableTabCloseTrueWithId();return false;">Disable closing for a specific tab (via tab ID)</a></li>
+				<li><a href="#" onclick="testDisableTabCloseFalseWithId();return false;">Re-enable closing for a specific tab (via tab ID)</a></li>
+			</ul>
+		</body>
+	</html> -->
+<!-- 
+<script type="text/javascript">
+	function openPrimaryTab(){
+		sforce.console.openPrimaryTab(undefined, 'http://www.example.com', true, 'example');
+	}
+
+	var callOpenSubTab = function callOpenSubTab(result){
+		sforce.console.openSubTab(result.id, 'http://www.example.com', true, 'example');
+	}
+
+	function openSubTab(){
+		sforce.console.getEnclosingPrimaryTabId(callOpenSubTab);
+	}
+
+	function setTitle(){
+		sforce.console.setTabTitle('Example');
+	}
+
+	var callCloseTab = function callCloseTab(result){
+		sforce.console.closeTab(result.id);
+	}
+
+	function closeTab(){
+		sforce.console.getEnclosingTabId(callCloseTab);
+	}
+</script>
+	<a href="#" onclick="openPrimaryTab(); return false;">Open A Primary Tab</a>
+	<p/><a href="#" onclick="openSubTab(); return false;">Open A Subtab</a>
+	<p/><a href="#" onclick="setTitle(); return false;">Set Title to Example</a>
+	<p/><a href="#" onclick="closeTab(); return false;">Close This Tab</a> -->
+
+	<!-- <a href="#" onclick="testCloseTab(); return false;">Click Here to close this tab</a>
+	<script type="text/javascript">
+		var callback = function(){
+			if(result.error){
+				alert("Error message is " + result.error);
+			}
+		};
+
+		function testCloseTab(){
+			sforce.console.getEnclosingTabId(closeSubtab);
+		}
+
+		var closeSubtab = function closeSubtab(result){
+			var tabId = result.id;
+			sforce.console.closeTab(tabId, callback);
+		};
+
+	</script> -->
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page showHeader="true" sidebar="true" standardController="Case" extensions="CaseComments">
+	
+</apex:page>

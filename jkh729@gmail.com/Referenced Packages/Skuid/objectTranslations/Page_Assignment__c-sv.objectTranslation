@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value><!-- Page Assignment --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value><!-- Page Assignment --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value><!-- Page Assignment --></value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value><!-- Page Assignment --></value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value><!-- Page Assignment --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value><!-- Page Assignment --></value>
+    </caseValues>
+    <fields>
+        <help><!-- The Salesforce action type(s) to which this Page Assignment applies --></help>
+        <label><!-- Action Type --></label>
+        <name>Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Clone</masterLabel>
+            <translation><!-- Clone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delete</masterLabel>
+            <translation><!-- Delete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Edit</masterLabel>
+            <translation><!-- Edit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tab</masterLabel>
+            <translation><!-- Tab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>View</masterLabel>
+            <translation><!-- View --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The User that this Page Assignment is for, if any. --></help>
+        <label><!-- Assigned To User --></label>
+        <name>Assigned_To_User__c</name>
+        <relationshipLabel><!-- Page Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Applies To --></label>
+        <name>Context__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page to Use --></label>
+        <name>Page__c</name>
+        <relationshipLabel><!-- Page Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The API / Developer Name of the Record Type to which this Page Assignment should apply --></help>
+        <label><!-- Record Type --></label>
+        <name>RecordTypeDeveloperName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Which SObject, or other scenario, will this Page Assignment be used for? Could also be an arbitrary name, such as &quot;SiteHome&quot;, for running Skuid from the Visualforce Component. --></help>
+        <label><!-- Object Type --></label>
+        <name>SObject_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, then standard layouts will be used instead of Skuid Pages for this Page Assignment. --></help>
+        <label><!-- Use Standard Layouts --></label>
+        <name>Use_Standard_Layouts__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Page Assignment Id --></nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- You must either select a Skuid Page or select &quot;Use Standard Layouts&quot;. --></errorMessage>
+        <name>Must_Select_Page_or_use_Standard_Layouts</name>
+    </validationRules>
+</CustomObjectTranslation>

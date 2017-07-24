@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Preferences</value>
+    </caseValues>
+    <fields>
+        <label><!-- Auto Assign Licenses on Activation --></label>
+        <name>Auto_Assign_Licenses_on_Activation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Assign Perm Sets on Activation --></label>
+        <name>Auto_Assign_Perm_Sets_on_Activation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Gen Page Support File in Composer --></label>
+        <name>Auto_Gen_Page_Support_File__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Revoke Licenses on Deactivation --></label>
+        <name>Auto_Revoke_Licenses_on_Deactivation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Auto Revoke Perm Sets on Deactivation --></label>
+        <name>Auto_Revoke_Perm_Sets_on_Deactivation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Composer Theme --></label>
+        <name>Default_Builder_Theme__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Mobile Composer Theme --></label>
+        <name>Default_Mobile_Builder_Theme__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Mobile Theme --></label>
+        <name>Default_Mobile_Theme__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Theme --></label>
+        <name>Default_Theme__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Collaboration Polling --></label>
+        <name>Disable_Collaboration_Polling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disable Hotkeys for Skuid App --></label>
+        <name>Disable_Hotkeys_Skuid_App__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packages to Auto-Assign Licenses to --></label>
+        <name>Package_Names_For_Auto_Assignment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packages to Auto-Revoke Licenses to --></label>
+        <name>Package_Names_For_Auto_Revocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Permission Sets to Auto-Assign --></label>
+        <name>Perm_Sets_For_Auto_Assignment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Permission Sets to Auto-Revoke --></label>
+        <name>Perm_Sets_For_Auto_Revocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Salesforce Header in Skuid Core --></label>
+        <name>Show_SF_Header_Skuid_Core__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Component Packs --></label>
+        <name>Use_Component_Packs__c</name>
+    </fields>
+</CustomObjectTranslation>

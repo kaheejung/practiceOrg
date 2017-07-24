@@ -1,0 +1,27 @@
+<apex:page showHeader="true" sidebar="true" controller="CaseClosedCount">
+	<apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" />
+    <apex:includeScript value="/support/console/25.0/integration.js"/>
+    <script type="text/javascript">
+    	var $ = jQuery.noConflict();
+    	$(document).ready(function(){
+    		 var str = 'Today Closed Cases : {!closedCaseCount}';
+                sforce.console.setCustomConsoleComponentButtonText(str, function() {
+                    sforce.console.scrollCustomConsoleComponentButtonText(0, 5, false, function(result){});
+                });
+
+            
+            //console.log('Id : ' + Id);
+
+           // sforce.console.addEventListener('SampleEvent', listener);
+           // sforce.console.fireEvent('SampleEvent', 'EventMessage', null);
+    	});
+
+        /*var test;
+        sforce.console.onEnclosingTabRefresh(function(result){
+            alert('테스트!!!');
+            test = result;
+        });
+
+        console.log('test : ' + test);*/
+	</script>
+</apex:page>

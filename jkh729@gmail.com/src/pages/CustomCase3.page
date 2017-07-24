@@ -1,0 +1,241 @@
+<apex:page showHeader="true" sidebar="true" standardController="Case" extensions="FileUploadTest" >
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/2000/xlink" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Salesforce Lightning Design System Trailhead Module</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- <apex:slds /> -->
+	<apex:includeScript value="{!URLFOR($Resource.JQueryResource, 'jquery_1_12_4_min.js')}"/>
+	<apex:includeScript value="{!URLFOR($Resource.ckeditor, 'ckeditor/ckeditor.js')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.ckeditor, 'ckeditor/samples/sample.css')}"/>
+
+	<style>
+		ul.tabs {
+			margin: 0;
+			padding: 0;
+			float: left;
+			list-style: none;
+			height: 32px;
+			border-bottom: 1px solid #eee;
+			border-left: 1px solid #eee;
+			width: 100%;
+			font-family:"dotum";
+			font-size:12px;
+		}
+		ul.tabs li {
+			float: left;
+			text-align:center;
+			cursor: pointer;
+			width:82px;
+			height: 31px;
+			line-height: 31px;
+			border: 1px solid #eee;
+			border-left: none;
+			background: #fafafa;
+			overflow: hidden;
+			position: relative;
+			border-bottom: 0px;
+		}
+		ul.tabs li.active {
+			background: #FFFFFF;
+			border-bottom: 1px solid #FFFFFF;
+			font-weight: bold;
+		}
+		.tab_container {
+			border: 1px solid #eee;
+			border-top: none;
+			clear: both;
+			float: left;
+			width: 248px;
+			background: #FFFFFF;
+		}
+		.custom_div_content {
+			padding: 5px;
+			font-size: 12px;
+			display: none;
+		}
+		.publishercontainer .bottomBar {
+			height: 50px;
+		}
+		.slds-scope li {
+			height: 30px;
+		}
+		.publishercontainer a.publisherattach {
+			height: 100%;
+		}
+		.zen .publisherTypeOverflow.zen-open .zen-trigger {
+			z-index: 0;
+		}
+		.zen .publisherTypeOverflow .zen-options {
+			top: 0px;
+			z-index: 10;
+		}
+
+
+
+	</style>
+
+	<script>
+		// Document On Ready
+		$( document ).ready(function() {
+			// Tab CSS
+			$(".custom_div_container").hide();
+			$(".custom_div_container:first").show();
+
+			$("ul.tabs li").click(function () {
+				$("ul.tabs li").removeClass("active").css("font-weight", "normal");
+				$(this).addClass("active").css("font-weight", "bold");
+				$(".custom_div_content").hide();
+				var activeTab = $(this).attr("rel");
+				$("#div_" + activeTab).show();
+				$("#div_" + activeTab).css('display', 'inline');
+
+				$(".sidebar_div").hide();
+				$("#sidebar_" + activeTab).show();
+			});
+
+			// CkEditor Menu Setting And Create
+			CKEDITOR.replace('textarea_ckeditor',  {
+				// ToolBar Custom
+				toolbarGroups: [
+					{"name":"basicstyles","groups":["basicstyles"]},
+					{"name":"links","groups":["links"]},
+					{"name":"paragraph","groups":["list","blocks"]},
+					{"name":"document","groups":["mode"]},
+					{"name":"insert","groups":["insert"]},
+					{"name":"styles","groups":["styles"]},
+					{"name":"about","groups":["about"]}
+				]
+			});
+		});
+
+
+		// Comment Save Fn
+		var fnSave = function() {
+			// [] = new Array()
+			var case_comment_id, comment_body, target_image, image_src_array = [];
+
+			// Spinners Show
+			$('#div_spinners').css('display', 'inline');
+
+			// CkEditor Body Create ( HTML Tag )
+			$('#div_target').html(CKEDITOR.instances.textarea_ckeditor.getData());
+
+			// Body Search ( Image Tag )
+			target_image = $( '#div_target > p > img' );
+
+			// Image List Push
+			target_image.each(function( index ) {
+				image_src_array.push($(this).attr('src'));
+			});
+
+			// Apex Class Methods Call ( Visualforce.remoting.Manager.invokeAction )
+			// Index 0 : Apex Class Methods Name
+			// Index 1 ~ N : Parameter
+			// Index Last : CallBack Function
+
+			// CaseComment Insert
+			Visualforce.remoting.Manager.invokeAction (	// caseCommentInsert Start
+				'{!$RemoteAction.FileUploadTest.caseCommentInsert}'		// FileUploadTest Method ( caseCommentInsert ) Call
+				, '{!Case.Id}'	// Parameter
+				, function(result, event) {	// caseCommentInsert CallBack Start
+					if (event.status) {	// caseCommentInsert status ( true ) Start
+						case_comment_id = result;	// Comment ID Result
+
+						// Image File Upload
+						Visualforce.remoting.Manager.invokeAction (	// bodyImageUpload Start
+							'{!$RemoteAction.FileUploadTest.bodyImageUpload}'	// FileUploadTest Method ( bodyImageUpload ) Call
+							, case_comment_id, image_src_array	// Parameter
+							, function(result, event) {	// bodyImageUpload CallBack Start
+								if(event.status) {	// bodyImageUpload status ( true ) Start
+									if(result.length > 0) {	// result Size Check Start
+										target_image.each(function( index ) {	// image src Change
+											img_url = '/servlet/servlet.FileDownload?file=' + result[index];
+											$(this).attr('src', img_url);
+										});
+									}	// result Size Check End
+									comment_body = $('#div_target').html();
+									fnCaseCommentUpdate(case_comment_id, comment_body);	// CaseCommentUpdate Fn Call
+								}	// bodyImageUpload status End
+							}	// bodyImageUpload CallBack Fn End
+						);	// bodyImageUpload End
+					}	// caseCommentInsert status End
+				}	// caseCommentInsert CallBack Fn End
+			);	// caseCommentInsert End
+		};	// fnSave End
+
+		// Comment Update Fn
+		var fnCaseCommentUpdate = function (case_comment_id, comment_body) {
+			// CaseComment Update
+			Visualforce.remoting.Manager.invokeAction (	// caseCommentUpdate Start
+				'{!$RemoteAction.FileUploadTest.caseCommentUpdate}'	// FileUploadTest Method ( caseCommentUpdate ) Call
+				, case_comment_id, comment_body	// Parameter
+				, function(result, event) {	// caseCommentUpdate CallBack Start
+					if (event.status) {	// caseCommentUpdate status ( true ) Start
+						fnRefresh(true);
+					}
+				}	// caseCommentUpdate CallBack End
+			);	// caseCommentUpdate End
+
+			// Spinners Hidden
+			$('#div_spinners').css('display', 'none');
+		};
+
+
+		// Save After Refresh
+		var fnRefresh = function (isSaved) {
+			refreshPage(isSaved);
+		}
+
+	</script>
+	<style type="text/css">
+		.sidebar_div ul li{
+			padding: 6px;
+			margin-left: 0px;
+			font-size: 9pt;
+		}
+	</style>
+
+	<body>
+		<apex:form id="myForm">
+			<apex:actionFunction name="refreshPage" action="{!refreshPage}" reRender="myForm">
+				<apex:param name="paramIsSave" value="" assignTo="{!isSave}" />
+			</apex:actionFunction>
+		</apex:form>
+		
+		<div class="slds-scope" style="width: 80%; height:100%;float: left;display: block;">
+
+			<ul class="tabs">
+				<li rel="tab1" class="{!if(isSave, 'active', '')}">Case</li>
+				<li rel="tab2">Comment</li>
+			</ul>
+
+			<div class="custom_div_container">
+				<div id="div_tab1" class="custom_div_content" style="display: {!if(!isSave, 'inline', 'none')};">
+					<apex:iframe src="https://ap4.salesforce.com/{!Case.Id}?isdtp=vw" id="ifr1"/>
+				</div>
+				<div id="div_tab2" class="custom_div_content" style="display: {!if(isSave, 'block', 'none')};">
+					<button class="slds-button slds-button_brand" onclick="fnSave()">Save</button>
+					<textarea id="textarea_ckeditor" style="width: 100%; height: 70%;" class="ckeditor"></textarea>
+					<div id="div_target" style="display: none;" />
+				</div>
+			</div>
+		</div>
+
+
+		<!-- SLDS spinner -->
+		<div id="div_spinners" style="height:6rem; display: none;">
+			<div role="status" class="slds-spinner slds-spinner_medium">
+				<span class="slds-assistive-text">Loading</span>
+				<div class="slds-spinner__dot-a"></div>
+				<div class="slds-spinner__dot-b"></div>
+			</div>
+		</div>
+		
+	</body>
+</head>
+</html>
+</apex:page>

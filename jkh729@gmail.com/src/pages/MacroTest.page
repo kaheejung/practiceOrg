@@ -1,0 +1,131 @@
+<apex:page showHeader="false" sidebar="true" controller="MacroTest" html-style="width: 200px; height: 200px;">
+	<apex:includeScript value="/support/console/36.0/integration.js"/>
+	<apex:includeScript value="/support/console/36.0/publisher.js"/>
+	<apex:outputPanel layout="block" style="overflow:auto;width:100%;height:100%" >
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+		<A HREF="#" onClick="executeInWidget();return false">Click here to run a macro</A> <apex:includeScript value="/support/console/36.0/integration.js"/>
+		<br/>
+		<A HREF="#" onClick="openInWidget('{!MacroId}');return false">Click here to select a macro</A>
+		<br/>
+	</apex:outputPanel>
+	<script type="text/javascript">
+		function executeInWidget(){
+			sforce.console.runSelectedMacro(); 
+		}
+		function openInWidget(id) {
+			sforce.console.selectMacro(id);
+		} 
+
+		$(document).ready(function(){
+			Sfdc.canvas.publisher.resize( { height : "200px" } );
+		});
+
+	</script>
+</apex:page>

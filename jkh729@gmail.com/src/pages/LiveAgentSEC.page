@@ -1,0 +1,14 @@
+<apex:page showHeader="true" sidebar="true">
+	<script type='text/javascript' src='https://c.la1-c2-ukb.salesforceliveagent.com/content/g/js/39.0/deployment.js'></script>
+	<script type='text/javascript'>
+	liveagent.init('https://d.la1-c2-ukb.salesforceliveagent.com/chat', '57228000000CbTe', '00D28000000HN4J');
+	</script>
+
+	<img id="liveagent_button_online_57328000000Gnkq" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('57328000000Gnkq')" src="https://daeuservicecloud.secure.force.com/livechat/resource/1430878737000/logon" /><img id="liveagent_button_offline_57328000000Gnkq" style="display: none; border: 0px none; " src="https://daeuservicecloud.secure.force.com/livechat/resource/1422586737000/logoff" />
+	<script type="text/javascript">
+	if (!window._laq) { window._laq = []; }
+	window._laq.push(function(){liveagent.showWhenOnline('57328000000Gnkq', document.getElementById('liveagent_button_online_57328000000Gnkq'));
+	liveagent.showWhenOffline('57328000000Gnkq', document.getElementById('liveagent_button_offline_57328000000Gnkq'));
+	});</script>
+
+</apex:page>

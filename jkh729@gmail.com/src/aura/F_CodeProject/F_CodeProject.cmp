@@ -1,0 +1,49 @@
+<aura:component implements="force:appHostable" controller="F_CodeProjectController">
+    <aura:attribute name="F_CodeProjectList" type="F_Code__c[]"/>
+    <aura:attribute name="SearchF_Code" type="F_Code__c"/>
+    <aura:attribute name="searchCode" type="String"/>
+    <aura:attribute name="searchName" type="String"/>
+    
+    <aura:attribute name="inputCode" type="String"/>
+    <aura:attribute name="inputName" type="String"/>
+    
+    <ui:inputText label="Project Code" value="{!v.searchCode}" class="slds-input" aura:id="searchCode"/>
+    <ui:inputText label="Project Name" value="{!v.searchName}" aura:id="searchName"/>
+    <ui:button label="Search" press="{!c.doSearch}"/>
+    <ui:button label="Add" press="{!c.doSearch}"/>
+    <!-- Message : <ui:outputText value="{!v.errorMessage}" aura:id="errorMessage"/>  -->
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th><div class="slds-truncate" title="Project Code">Project Code</div></th>
+            	<th><div class="slds-truncate" title="Project Code">Project Name</div></th>
+            </tr>
+        </thead>
+        <tbody>
+    		<aura:iteration items="{!v.F_CodeProjectList}" var="row">
+				<tr>
+                    <td><div class="slds-truncate">{!row.Code__c}</div></td>
+                    <td><div class="slds-truncate">{!row.Name}</div></td>
+                </tr>
+    		</aura:iteration>    	
+        </tbody>
+    </table>
+    
+    <div aria-hidden="false" id="editModal" role="dialog" class="slds-modal slds-modal--large slds-fade-in-open" style="display:none;">
+    	<div class="slds-modal__container">
+            <div class="slds-modal__header">
+            	<h2 id="header43" class="slds-text-heading--medium">Add New Record.</h2>
+                <button class="slds-button slds-button--neutral" onclick="{!c.hideModal}">X</button>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <div>
+                	<p>Modal boday</p>
+                </div>
+            </div>
+            <div class="slds-x-small-buttons--horizontal">
+            	<p>footer</p>
+            </div>
+        </div>
+    </div>
+    <button class="slds-button slds-button--neutral" onclick="{!c.showModal}">Open Modal</button>
+</aura:component>

@@ -1,0 +1,130 @@
+<apex:page showHeader="true" sidebar="true" standardController="Case" extensions="CaseCustomPage" tabStyle="Case">
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<title>Salesforce Lightning Design System Trailhead Module</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<apex:includeScript value="{!URLFOR($Resource.JQueryResource, 'jquery_1_12_4_min.js')}"/>
+	
+	<style>
+		.fewerMore{
+			display: none;
+		}
+
+
+		ul.tabs {
+			margin: 0;
+			padding: 0;
+			float: left;
+			list-style: none;
+			height: 32px;
+			border-bottom: 1px solid #eee;
+			border-left: 1px solid #eee;
+			width: 100%;
+			font-family:"dotum";
+			font-size:12px;
+		}
+		ul.tabs li {
+			float: left;
+			text-align:center;
+			cursor: pointer;
+			width:82px;
+			height: 31px;
+			line-height: 31px;
+			border: 1px solid #eee;
+			border-left: none;
+			background: #fafafa;
+			overflow: hidden;
+			position: relative;
+			border-bottom: 0px;
+		}
+		ul.tabs li.active {
+			background: #FFFFFF;
+			border-bottom: 1px solid #FFFFFF;
+			font-weight: bold;
+		}
+		.tab_container {
+			border: 1px solid #eee;
+			border-top: none;
+			clear: both;
+			float: left;
+			width: 248px;
+			background: #FFFFFF;
+		}
+		.custom_div_content {
+			padding: 5px;
+			font-size: 12px;
+			display: none;
+		}
+
+
+	</style>
+
+	<script>
+		$( document ).ready(function() {
+			$(".custom_div_container").hide();
+			$(".custom_div_container:first").show();
+
+			$("ul.tabs li").click(function () {
+				$("ul.tabs li").removeClass("active").css("font-weight", "normal");
+				$(this).addClass("active").css("font-weight", "bold");
+				$(".custom_div_content").hide();
+				var activeTab = $(this).attr("rel");
+				//$("#div_" + activeTab).fadeIn();
+				$("#div_" + activeTab).show();
+			});
+		});
+	</script>
+
+	<body>
+		<div style="width:100%; height: 100%;" class="slds-scope">
+
+
+			<ul class="tabs">
+				<li class="active" rel="tab1">Feed</li>
+				<li rel="tab2">Detail</li>
+				<li rel="tab3">Other</li>
+			</ul>
+
+			<div class="custom_div_container">
+				<div id="div_tab1" class="custom_div_content" style="display: inline;">
+					<chatter:feed entityId="{!Case.Id}"/>
+				</div>
+
+				<div id="div_tab2" class="custom_div_content">
+					<apex:detail subject="{!Case.Id}" relatedList="true" title="true"/>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</body>
+</head>
+</html>
+	<!-- <table>
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<apex:tabPanel switchType="client" selectedTab="tabdetails" 
+                  id="AccountTabPanel" tabClass='activeTab' 
+                  inactiveTabClass='inactiveTab'>   
+		<apex:tab label="Details" name="CaseDetails" id="tabdetails">
+			<apex:detail subject="{!Case.Id}" relatedList="false" title="false"/>
+		</apex:tab>
+		<apex:tab label="Feed" name="Feed" id="tabContact">
+			<chatter:feedWithFollowers entityId="{!Case.Id}"/>
+		</apex:tab>
+   </apex:tabPanel> -->
+   
+</apex:page>

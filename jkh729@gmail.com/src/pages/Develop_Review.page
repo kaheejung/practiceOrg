@@ -1,0 +1,20 @@
+<apex:page showHeader="true" sidebar="false" controller="Develop_Review">
+	<apex:form id="mainForm">
+		<apex:actionFunction name="doSearchReview" action="{!doSearchReview}" reRender="mainForm" status="blockUI"/>
+		<apex:pageBlock >
+			<apex:sectionHeader title="Develop_Review" subtitle="{!selectedLabel}"/>
+			<apex:pageBlockSection >
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel >Review : </apex:outputLabel>
+					<apex:selectList value="{!selectedValue}" size="1" onchange="doSearchReview();return false;">
+						<apex:selectOptions value="{!listSelectOptionReview}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:iframe src="{!selectedValue}" rendered="{!selectedValue=='N2_Wrapper'}" height="1000px" id="innerFrameN2"/>
+			<apex:iframe src="{!selectedValue}" rendered="{!selectedValue=='N3_Array_ZigZag'}" height="1000px" id="innerFrameN3"/>
+			<apex:iframe src="{!selectedValue}" rendered="{!selectedValue=='N4_Array_Oblique'}" height="1000px" id="innerFrameN4"/>
+		</apex:pageBlock>
+	</apex:form>
+	<apex:include pageName="N2_Wrapper"  id="innerFrameN2"/>
+</apex:page>
